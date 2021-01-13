@@ -1,3 +1,5 @@
+from typing import List
+
 def isPalindrome(self , s: str) -> bool:
     s = s.lower() # 소문자로 변환하여 변수에 저장
     '''
