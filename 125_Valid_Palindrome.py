@@ -1,4 +1,6 @@
 from typing import List
+import re
+
 
 def isPalindrome(self , s: str) -> bool:
     s = s.lower() # 소문자로 변환하여 변수에 저장
@@ -12,3 +14,6 @@ def isPalindrome(self , s: str) -> bool:
     s = re.sub('[^a-z0-9]','',s) 
     
     return s == s[::-1] # 슬라이싱 -> 뒤집어진 문자열 반환
+
+str = ['']
+isPalindrome('tomot',str)
