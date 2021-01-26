@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/codemaster.iml" filepath="$PROJECT_DIR$/.idea/codemaster.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/workplace_mac.iml" filepath="$PROJECT_DIR$/.idea/workplace_mac.iml" />
+>>>>>>> 30724105de93b2620edf7a547497ae05f720b4c2
     </modules>
   </component>
 </project>
