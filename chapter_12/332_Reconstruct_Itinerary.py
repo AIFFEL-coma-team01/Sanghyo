@@ -32,21 +32,42 @@ Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
 Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"].
              But it is larger in lexical order.
 
+collections.defalutdict()
+    dictionary와 유사한 객체를 반환합니다. 
+    defaultdict내장 클래스의 하위 dict클래스입니다. 
+    하나의 메서드를 재정의하고 하나의 쓰기 가능한 인스턴스 변수를 추가합니다. 
+    나머지 기능은 dict클래스와 동일하며 여기에 설명되어 있지 않습니다.
+
+    첫 번째 인수는 default_factory 속성 의 초기 값을 제공 합니다. 기본 value는 None입니다. 
+    나머지 모든 인수는 dict키워드 인수를 포함 하여 생성자에 전달 된 것처럼 동일하게 처리 됩니다.
+https://docs.python.org/3/library/collections.html#collections.defaultdict
 '''
+
 #DFS로 일정 그래프 구성
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        graph = collection.defaultdict(list)
+        # 그래프 구성하기
+        graph = collections.defaultdict(list)
         # 그래프 순서대로 구성
+        '''
+        1. 그래프를 구성하고 
+        for a, b in tickets:
+            graph[a].append(b)
+        2. 그래프를꺼내 정렬하는 방식
+        for a in graph:
+            graph[a].sort()
+        '''
+        #sorted() 함수를 활용하여 위 과정을 함축
         for a , b in sorted(tickets):
             graph[a].append(b)
+        
         route = []
         def dfs(a):
-                # 첫 번째 가압을 읽어 어휘 순 방문
+                # 첫 번째 value를  읽어 어휘 순으로 방문하기 위해 pop()함수 이용하여 재귀호출 -> 결과리스트에 역순으로 담기고, 한번 호출한 경로는 사라진다.
                 while graph[a]:
                     dfs(graph[a].pop(0))
                 route.append(a)
         dfs('JFK')
-        #다시 뒤집어 어휘 순 결과로 반환
+        #역순으로 담긴 경로를 다시 뒤집어 어휘 순 결과로 변환
         return route[::-1]
-        
+#72 ms
