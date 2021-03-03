@@ -70,4 +70,11 @@ class Solution:
         dfs('JFK')
         #역순으로 담긴 경로를 다시 뒤집어 어휘 순 결과로 변환
         return route[::-1]
+'''
+Example 1:
+
+Input: [["MUC", "LHR"], ["JFK", "MUC"], ["SFO", "SJC"], ["LHR", "SFO"]]
+Output: ["JFK", "MUC", "LHR", "SFO", "SJC"]
+
+'''
 #72 ms

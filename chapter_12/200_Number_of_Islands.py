@@ -95,7 +95,7 @@ class Solution:
             if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] != '1':
                 return #백트래킹으로 빠져나오기
 
-            grid[i][j] = 0 
+            grid[i][j] = 0 # 
             
             # 동서남북 탐색
             dfs(i+1,j) # 중첩함수 미사용시 -> self.dfs(grid, i+1, j)
@@ -107,8 +107,20 @@ class Solution:
         for i in range(len(grid)):#그리드 행의 크기 와 
             for j in range(len(grid[0])):#그리드 열의 크기 동안
                 if grid[i][j] == '1': #육지(1)가 있다면 
-                    dfs(i,j) #육지(1) 탐색시작 
+                    dfs(i,j) #육지(1) 탐색 시작 
                     # 모든 육지 탐색 후 카운트 1 증가
                     count += 1
         return count
+'''
+Example 1:
+
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
+
+'''
 #132 ms
