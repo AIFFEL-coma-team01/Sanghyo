@@ -54,14 +54,14 @@ class Soulution(Object):
                     return False #아니면 False 반환
             return True
 
-    if not s or not t:
-        return '' # 만약 s 혹은 t 가 충족 되지 않을경우 빈 문자열 반환
-    
-    window_size = len(t) #윈도우 사이즈는 리스트 t의 길이로 설정
+        if not s or not t:
+            return '' # 만약 s 혹은 t 가 충족 되지 않을경우 빈 문자열 반환
+        
+        window_size = len(t) #윈도우 사이즈는 리스트 t의 길이로 설정
 
-    for size in range(window_size, len(s) + 1): # 윈도우 사이즈 =3 , 입력리스트 s길이 (예제에서는 13) + 1 => range(3,13)
-        for left in range(len(s) - size +1): # range(13 - size +1 )
-            s_substr = s[left:left + size]
-            if contains(list(s_substr),list(t)):
-                return s_substr
-    return ''
+        for size in range(window_size, len(s) + 1): # 윈도우 사이즈 =3 , 입력리스트 s길이 (예제에서는 13) + 1 => range(3,13)
+            for left in range(len(s) - size +1): # range(13 - size +1 )
+                s_substr = s[left:left + size]
+                if contains(list(s_substr),list(t)):
+                    return s_substr
+        return ''
