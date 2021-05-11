@@ -45,8 +45,8 @@ class Solution(object):
 '''        
 
 class Soulution(Object):
-    def minWindow(self, s: str, t: str) -> str: #최소 윈도우 함수 선언
-        def contains(s_substr_lst : List , t_lst: List): # t의 요소 하나씩 비교하며 슬라이딩 윈도우 내에 속한 문자를 제거
+    def minWindow(self, s, t) #최소 윈도우 함수 선언
+        def contains(s_substr_lst, t_lst: # t의 요소 하나씩 비교하며 슬라이딩 윈도우 내에 속한 문자를 제거
             for t_elem in t_lst: #입력 t의 요소가 t 리스트에 있는동안
                 if t_elem in s_substr_lst: #t 요소가 s 리스트에 있으면
                     s_substr_lst.remove(t_elem) # s 리스트에서 t 요소를 제거
